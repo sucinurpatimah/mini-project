@@ -35,18 +35,34 @@
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-body d-flex flex-column">
-                            <div class="d-flex align-items-center">
-                                <img src="{{ asset('assets/default_profile.png') }}" alt="Profile Picture"
-                                    class="rounded-circle mr-3" style="width: 50px; height: 50px; margin-right: 10px;">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('assets/default_profile.png') }}" alt="Profile Picture"
+                                        class="rounded-circle mr-3" style="width: 50px; height: 50px; margin-right: 10px;">
+                                    <div>
+                                        <h6 class="card-title mb-0">Nama Pengguna</h6>
+                                        <small class="text-muted" style="font-size: 12px;">Jam Upload</small>
+                                    </div>
+                                </div>
                                 <div>
-                                    <h6 class="card-title mb-0">Nama Pengguna</h6>
-                                    <small class="text-muted" style="font-size: 12px;">Jam Upload</small>
+                                    <i class="bi bi-bookmarks" style="font-size: 15px;"></i>
                                 </div>
                             </div>
                             <p class="card-text mt-3" style="font-size: 14px;">isi caption kamu disini love</p>
                         </div>
                         <img src="{{ asset('assets/default_profile.png') }}" class="card-img-bottom" alt="Gambar"
                             style="max-height: 200px; width: auto; margin: 10px;">
+                        <hr style="width: calc(100% - 20px); margin: 0 auto; margin-bottom: 10px;">
+                        <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px;">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-heart" style="font-size: 14px; margin-left: 10px;"></i>
+                                <span style="margin-left: 5px; font-size: 12px;">Like</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-chat" style="font-size: 14px; margin-right: 5px;"></i>
+                                <span style="font-size: 12px; margin-right: 10px;">Comment</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
