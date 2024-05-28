@@ -11,18 +11,29 @@
 <body>
     <div class="row row-gap-4 justify-content-center mt-4 mb-4">
         <div class="col-8">
-            <!-- Error message -->
-            @if (session('error'))
-                <div class="alert alert-danger" role="alert">
-                    {{ session('error') }}
-                </div>
-            @endif
-
             <div>
                 <h2 class="text-center fw-bold my-3">Login</h2>
                 <div class="card-body">
                     <form action="{{ route('login.authenticate') }}" method="POST">
                         @csrf
+                        <!-- Error message -->
+                        @if (session('success'))
+                            <div class="d-flex justify-content-center">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert"
+                                    style="font-size: 14px; background-color: #d4edda; border-color: #c3e6cb; color: #155724; max-width: 30rem; font-weight: bold;">
+                                    {{ session('success') }}
+                                </div>
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="d-flex justify-content-center">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                    style="font-size: 14px; background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; max-width: 30rem; font-weight: bold;">
+                                    {{ session('error') }}
+                                </div>
+                            </div>
+                        @endif
 
                         <div class="d-flex align-items-center mb-3">
                             <div class="me-4" style="margin-left: -40px;">

@@ -65,11 +65,12 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+
                                 <div class="mb-3">
                                     <label for="password" class="form-label fw-bold">
                                         Password
                                         <i class="bi bi-eye" id="togglePassword"
-                                            style="color: #fff; margin-left: 10px; cursor: pointer;"></i>
+                                            style="color: #ffffff; margin-left: 10px; cursor: pointer;"></i>
                                     </label>
                                     <input type="password" class="form-control @error('password') is-invalid @enderror"
                                         id="password" name="password" required
@@ -111,6 +112,37 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+        <script>
+            document.getElementById('togglePassword').addEventListener('click', function() {
+                const passwordInput = document.getElementById('password');
+                const icon = this;
+
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    icon.classList.remove('bi-eye');
+                    icon.classList.add('bi-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    icon.classList.remove('bi-eye-slash');
+                    icon.classList.add('bi-eye');
+                }
+            });
+            document.getElementById('togglePasswordConfirmation').addEventListener('click', function() {
+                const PasswordConfirmationInput = document.getElementById('password_confirmation');
+                const icon = this;
+
+                if (PasswordConfirmationInput.type === 'password') {
+                    PasswordConfirmationInput.type = 'text';
+                    icon.classList.remove('bi-eye');
+                    icon.classList.add('bi-eye-slash');
+                } else {
+                    PasswordConfirmationInput.type = 'password';
+                    icon.classList.remove('bi-eye-slash');
+                    icon.classList.add('bi-eye');
+                }
+            });
         </script>
 </body>
 

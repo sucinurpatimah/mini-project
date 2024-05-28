@@ -41,8 +41,7 @@ class AuthController extends Controller
         // Log in the user after registration
         Auth::login($user);
 
-        // Redirect to a specific page after successful registration
-        return redirect()->route('index');
+        return redirect()->route('login')->with('success', 'Registrasi Berhasil, Silahkan Login!');
     }
 
     public function authenticate(Request $request)

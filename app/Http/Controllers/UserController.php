@@ -9,8 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $products = Post::all();
-        return view('user.index');
+        $posts = Post::all();
+        return view('user.index', compact('posts'));
     }
 
     public function explore()
