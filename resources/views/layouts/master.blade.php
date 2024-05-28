@@ -17,17 +17,18 @@
         <div class="d-flex flex-column align-items-start mb-3">
             <div class="d-flex align-items-center">
                 @if (auth()->check())
-                    <!-- Check if user is logged in -->
                     @if (auth()->user()->profile_image)
-                        <!-- Check if user has profile image -->
                         <img src="{{ asset('' . auth()->user()->profile_image) }}" alt="Profile Image" width="30px"
                             height="30px" class="me-2 rounded-circle">
                     @else
-                        <i class="bi bi-person-circle" style="font-size: 50px; margin-right: 10px;"></i>
+                        <a href="{{ route('user.profile') }}">
+                            <i class="bi bi-person-circle"
+                                style="font-size: 50px; margin-right: 10px; color: white;"></i>
+                        </a>
                     @endif
                     <div>
-                        <span>{{ auth()->user()->username }}</span><br> <!-- Show username if logged in -->
-                        <small class="text-muted">{{ auth()->user()->name }}</small> <!-- Show name if logged in -->
+                        <span>{{ auth()->user()->username }}</span><br>
+                        <small class="text-muted">{{ auth()->user()->name }}</small>
                     </div>
                 @else
                     <!-- If user is not logged in, show the logo -->
@@ -77,7 +78,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#"
+                    <a class="nav-link text-light" href="{{ route('user.addPost') }}""
                         style="display: flex; align-items: center; margin-bottom: 5px;">
                         <i class="bi bi-plus-lg" style="margin-right: 30px; color: #17a2b8;"></i>
                         Posting
