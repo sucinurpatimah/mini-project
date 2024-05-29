@@ -21,6 +21,7 @@ Route::get('/', [DashboardController::class, 'index'])->name('index');
 //User
 Route::get('/index', [UserController::class, 'index'])->name('user.index');
 Route::get('/explore', [UserController::class, 'explore'])->name('user.explore');
+Route::post('/search', [UserController::class, 'search'])->name('user.search');
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 Route::get('/posting', [UserController::class, 'addPost'])->name('user.addPost');
 Route::post('/store', [UserController::class, 'storePost'])->name('user.store');

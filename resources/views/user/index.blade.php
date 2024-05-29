@@ -37,14 +37,14 @@
                             <div class="card-body d-flex flex-column">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="d-flex align-items-center">
-                                        <!-- Ganti dengan gambar profil pengguna -->
+                                        <!-- Ganti gambar profil pengguna -->
                                         <img src="{{ asset('assets/default_profile.png') }}" alt="Profile Picture"
                                             class="rounded-circle mr-3"
                                             style="width: 50px; height: 50px; margin-right: 10px;">
                                         <div>
-                                            <!-- Ganti dengan nama pengguna yang sesuai dengan postingan -->
-                                            <h6 class="card-title mb-0">{{ auth()->user()->username }}</h6>
-                                            <!-- Ganti dengan waktu postingan -->
+                                            <!-- Ganti nama pengguna yang sesuai dengan postingan -->
+                                            <h6 class="card-title mb-0">{{ $post->user->username }}</h6>
+                                            <!-- Ganti waktu postingan -->
                                             <small class="text-muted"
                                                 style="font-size: 12px;">{{ $post->created_at }}</small>
                                         </div>
@@ -53,12 +53,12 @@
                                         <i class="bi bi-bookmarks" style="font-size: 15px;"></i>
                                     </div>
                                 </div>
-                                <!-- Ganti dengan caption dari postingan -->
+                                <!-- Ganti caption dari postingan -->
                                 <p class="card-text mt-3" style="font-size: 14px;">{{ $post->caption }}</p>
                             </div>
-                            <!-- Ganti dengan sumber gambar dari postingan -->
+                            <!-- Ganti gambar dari postingan -->
                             <img src="{{ asset($post->image) }}" class="card-img-bottom" alt="Gambar"
-                                style="max-height: 200px; width: auto; margin: 10px;">
+                                style="max-height: 330px; width: auto; margin: 10px;">
                             <hr style="width: calc(100% - 20px); margin: 0 auto; margin-bottom: 10px;">
                             <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px;">
                                 <div class="d-flex align-items-center">

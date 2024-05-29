@@ -12,4 +12,9 @@ class Post extends Model
         'caption',
         'image',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
