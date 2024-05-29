@@ -28,11 +28,10 @@
                     @if (isset($users))
                         <ul class="list-group">
                             @foreach ($users as $user)
-                                <li class="list-group-item">
+                                <h5>Hasil Pencarianmu</h5>
+                                <li class="list-group-item" style="border: none;">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <!-- Tambahkan class justify-content-between -->
                                         <div class="d-flex align-items-center">
-                                            <!-- Wrap nama dan gambar profil dalam div baru -->
                                             <img src="{{ asset('assets/default_profile.png') }}" alt="Profile Picture"
                                                 class="rounded-circle mr-3"
                                                 style="width: 30px; height: 30px; margin-right: 10px;">

@@ -77,6 +77,20 @@
                                     style="color: rgb(255, 255, 255); font-weight: bold;">Register</a></p>
                         </div>
                     </form>
+
+                    <div id="news" class="text-light px-4 py-2"
+                        style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; background-color: #ffffff;">
+                        <div class="d-flex align-items-center">
+                            <div style="margin-left: 70px;">
+                                <img src="{{ asset('assets/logo-medsos.png') }}" alt="Logo"
+                                    style="width: 70px; height: 70px;">
+                                <span style="font-weight: bold; color:#000; margin-left: 30px;">Tentang Kami</span>
+                            </div>
+                            <div class="ms-auto" style="margin-right: 70px;">
+                                <span style="font-weight: bold; color:#000; margin-right: 50px;">Kontak</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
