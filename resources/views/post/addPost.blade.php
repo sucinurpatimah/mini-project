@@ -34,7 +34,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card mb-3">
-                        <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body d-flex flex-column">
                                 <div class="d-flex align-items-center justify-content-between">

@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('user.addPost') }}""
+                    <a class="nav-link text-light" href="{{ route('post.addPost') }}""
                         style="display: flex; align-items: center; margin-bottom: 5px;">
                         <i class="bi bi-plus-lg" style="margin-right: 30px; color: #17a2b8;"></i>
                         Posting

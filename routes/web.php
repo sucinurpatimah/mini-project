@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,13 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-//User
+// User
 Route::get('/index', [UserController::class, 'index'])->name('user.index');
 Route::get('/explore', [UserController::class, 'explore'])->name('user.explore');
 Route::post('/search', [UserController::class, 'search'])->name('user.search');
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
-Route::get('/posting', [UserController::class, 'addPost'])->name('user.addPost');
-Route::post('/store', [UserController::class, 'storePost'])->name('user.store');
+
+
+// Post
+Route::get('/posting', [PostController::class, 'addPost'])->name('post.addPost');
+Route::post('/store', [PostController::class, 'storePost'])->name('post.store');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
