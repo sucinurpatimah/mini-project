@@ -62,8 +62,10 @@
                                 <p class="card-text mt-3" style="font-size: 14px;">{{ $post->caption }}</p>
                             </div>
                             <!-- Display the image associated with the post -->
-                            <img src="{{ asset($post->image) }}" class="card-img-bottom" alt="Post Image"
-                                style="max-height: 330px; width: auto; margin: 10px;">
+                            <a href="{{ route('post.seePost') }}">
+                                <img src="{{ asset($post->image) }}" class="card-img-bottom img-fluid" alt="Post Image"
+                                    style="max-height: 370px; width: calc(100% - 20px); margin: 10px; object-fit: cover;">
+                            </a>
                             <hr style="width: calc(100% - 20px); margin: 0 auto; margin-bottom: 10px;">
                             <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px;">
                                 <div class="d-flex align-items-center">
@@ -78,6 +80,7 @@
                         </div>
                     @endforeach
                 </div>
+
             </div>
         </div>
         <!-- Akhir konten tambahan -->

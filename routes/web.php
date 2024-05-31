@@ -29,6 +29,7 @@ Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')
 // Post
 Route::get('/posting', [PostController::class, 'addPost'])->name('post.addPost');
 Route::post('/store', [PostController::class, 'storePost'])->name('post.store');
+Route::get('/seePost', [PostController::class, 'seePost'])->name('post.seePost');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
