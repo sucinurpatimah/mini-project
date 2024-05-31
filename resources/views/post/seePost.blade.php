@@ -49,14 +49,51 @@
                                     </div>
                                     <hr style="margin-top: 120px">
                                     <div class="d-flex justify-content-between align-items-center"
-                                        style="margin-bottom: 10px; color: #17a2b8;">
+                                        style="margin-bottom: 10px;">
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-heart" style="font-size: 14px; margin-left: 10px;"></i>
-                                            <i class="bi bi-send" style="font-size: 14px; margin-left: 10px;"></i>
-                                            <i class="bi bi-chat" style="font-size: 14px; margin-left: 10px;"></i>
+                                            @guest
+                                                <a href="{{ route('login') }}" class="btn btn-link"
+                                                    style="padding: 0; margin-left: 10px;">
+                                                    <i class="bi bi-heart" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </a>
+                                                <a href="{{ route('login') }}" class="btn btn-link"
+                                                    style="padding: 0; margin-left: 10px;">
+                                                    <i class="bi bi-chat" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </a>
+                                                <a href="{{ route('login') }}" class="btn btn-link"
+                                                    style="padding: 0; margin-left: 10px;">
+                                                    <i class="bi bi-send" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </a>
+                                            @endguest
+                                            @auth
+                                                <button class="btn btn-link" style="padding: 0; margin-left: 10px;"
+                                                    onclick="likePost({{ $posts->id }})">
+                                                    <i class="bi bi-heart" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </button>
+                                                <button class="btn btn-link"
+                                                    style="padding: 0; margin-left: 10px; color: #17a2b8;"
+                                                    onclick="commentPost({{ $posts->id }})">
+                                                    <i class="bi bi-chat" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </button>
+                                                <button class="btn btn-link" style="padding: 0; margin-left: 10px;"
+                                                    onclick="sendPost({{ $posts->id }})">
+                                                    <i class="bi bi-send" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </button>
+                                            @endauth
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-bookmarks" style="font-size: 14px; margin-right: 5px;"></i>
+                                            @guest
+                                                <a href="{{ route('login') }}" class="btn btn-link"
+                                                    style="padding: 0; margin-right: 5px;">
+                                                    <i class="bi bi-bookmarks" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </a>
+                                            @endguest
+                                            @auth
+                                                <button class="btn btn-link" style="padding: 0; margin-right: 5px;"
+                                                    onclick="bookmarkPost({{ $posts->id }})">
+                                                    <i class="bi bi-bookmarks" style="font-size: 14px; color: #17a2b8;"></i>
+                                                </button>
+                                            @endauth
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -76,8 +113,14 @@
                                             <textarea class="form-control" name="comment" id="comment" rows="2" placeholder="Tambahkan komentar"
                                                 style="border: none; border-bottom: 1px solid; resize: none; font-size: 12px; outline: none; height: 30px;"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary"
-                                            style="background-color: transparent; color: white; border: none; font-size: 12px;">Kirim</button>
+                                        @guest
+                                            <a href="{{ route('login') }}" class="btn btn-primary"
+                                                style="background-color: transparent; color: white; border: none; font-size: 12px;">Kirim</a>
+                                        @endguest
+                                        @auth
+                                            <button type="submit" class="btn btn-primary"
+                                                style="background-color: transparent; color: white; border: none; font-size: 12px;">Kirim</button>
+                                        @endauth
                                     </form>
                                 </div>
                             </div>
