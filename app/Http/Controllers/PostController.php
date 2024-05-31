@@ -42,9 +42,9 @@ class PostController extends Controller
         return redirect()->route('user.index')->with('success', 'Anda telah mengupload postingan baru!');
     }
 
-    public function seePost()
+    public function seePost($id)
     {
-        $posts = Post::all();
+        $posts = Post::find($id);
         return view('post.seePost', compact('posts'));
     }
 }

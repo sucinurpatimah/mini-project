@@ -57,7 +57,7 @@
                                 <p class="card-text mt-3" style="font-size: 14px;">{{ $post->caption }}</p>
                             </div>
                             <!-- Ganti gambar dari postingan -->
-                            <a href="{{ route('post.seePost') }}">
+                            <a href="{{ route('post.seePost', $post->id) }}">
                                 <img src="{{ asset($post->image) }}" class="card-img-bottom img-fluid" alt="Post Image"
                                     style="max-height: 370px; width: calc(100% - 20px); margin: 10px; object-fit: cover;">
                             </a>
@@ -86,7 +86,7 @@
             <small class="text-muted">Orang yang mungkin anda kenal</small>
 
             @php
-                $recommendations = [
+                $users = [
                     [
                         'username' => 'sucinurrr',
                         'name' => 'Suci Nurpatimah',
@@ -102,7 +102,7 @@
                 $loggedInUsername = Auth::user()->username;
             @endphp
 
-            @foreach ($recommendations as $user)
+            @foreach ($users as $user)
                 @if ($user['username'] !== $loggedInUsername)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item border-0">

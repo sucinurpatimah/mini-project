@@ -64,7 +64,7 @@
             <small class="text-muted">Orang yang mungkin anda kenal</small>
 
             @php
-                $recommendations = [
+                $users = [
                     [
                         'username' => 'sucinurrr',
                         'name' => 'Suci Nurpatimah',
@@ -75,12 +75,16 @@
                         'name' => 'Faqih Yuliaji Setiawan',
                         'profile_img' => 'assets/default_profile.png',
                     ],
-                    ['username' => 'trians', 'name' => 'Tri Annisa', 'profile_img' => 'assets/default_profile.png'],
+                    [
+                        'username' => 'trians',
+                        'name' => 'Tri Annisa',
+                        'profile_img' => 'assets/default_profile.png',
+                    ],
                 ];
-                $loggedInUsername = Auth::user()->username;
+                $loggedInUsername = Auth::check() ? Auth::user()->username : null;
             @endphp
 
-            @foreach ($recommendations as $user)
+            @foreach ($users as $user)
                 @if ($user['username'] !== $loggedInUsername)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item border-0">
@@ -100,6 +104,7 @@
                     </ul>
                 @endif
             @endforeach
+
 
             <hr>
         </div>

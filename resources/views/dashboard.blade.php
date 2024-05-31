@@ -62,7 +62,7 @@
                                 <p class="card-text mt-3" style="font-size: 14px;">{{ $post->caption }}</p>
                             </div>
                             <!-- Display the image associated with the post -->
-                            <a href="{{ route('post.seePost') }}">
+                            <a href="{{ route('post.seePost', $post->id) }}">
                                 <img src="{{ asset($post->image) }}" class="card-img-bottom img-fluid" alt="Post Image"
                                     style="max-height: 370px; width: calc(100% - 20px); margin: 10px; object-fit: cover;">
                             </a>
