@@ -13,7 +13,8 @@
                 <span style="font-size: 15px;">Back</span>
             </a>
         </div>
-        <div class="container mt-2 pt-3" style="max-width: 900px; margin: 0 auto; margin-bottom: 50px; margin-left: 300px;">
+        <div class="container mt-2 pt-3"
+            style="max-width: 900px; margin: 0 auto; margin-bottom: 100px; margin-left: 300px;">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="card mb-3">
@@ -48,7 +49,7 @@
                                     </div>
                                     <hr style="margin-top: 120px">
                                     <div class="d-flex justify-content-between align-items-center"
-                                        style="margin-bottom: 10px; color: #17a2b8;"">
+                                        style="margin-bottom: 10px; color: #17a2b8;">
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-heart" style="font-size: 14px; margin-left: 10px;"></i>
                                             <i class="bi bi-send" style="font-size: 14px; margin-left: 10px;"></i>
@@ -85,5 +86,23 @@
                 </div>
             </div>
         </div>
+
+        @guest
+            <div id="news" class="text-light px-4 py-2"
+                style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; background-color: #17a2b8;">
+                <div class="d-flex align-items-center">
+                    <div style="margin-left: 70px;">
+                        <span style="font-weight: bold;">Jangan ketinggalan berita terbaru</span>
+                        <p class="mb" style="font-size: 14px;">login, untuk pengalaman yang baru</p>
+                    </div>
+                    <div class="ms-auto" style="margin-right: 70px;">
+                        <a href="{{ route('login') }}" class="btn btn-outline-light text-white"
+                            style="font-weight: bold; border-radius: 10px; background-color: transparent; border-color: white; color: white; transition: none;">Login</a>
+                        <a href="{{ route('register') }}" class="btn btn-light text-black"
+                            style="font-weight: bold; border-radius: 10px; margin-left: 10px; background-color: white; color: black; border-color: white; transition: none;">Register</a>
+                    </div>
+                </div>
+            </div>
+        @endguest
     </section>
 @endsection
