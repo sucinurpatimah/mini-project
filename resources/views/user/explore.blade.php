@@ -104,9 +104,25 @@
                     </ul>
                 @endif
             @endforeach
-
-
             <hr>
         </div>
+
+        @guest
+            <div id="news" class="text-light px-4 py-2"
+                style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; background-color: #17a2b8;">
+                <div class="d-flex align-items-center">
+                    <div style="margin-left: 70px;">
+                        <span style="font-weight: bold;">Jangan ketinggalan berita terbaru</span>
+                        <p class="mb" style="font-size: 14px;">login, untuk pengalaman yang baru</p>
+                    </div>
+                    <div class="ms-auto" style="margin-right: 70px;">
+                        <a href="{{ route('login') }}" class="btn btn-outline-light text-white"
+                            style="font-weight: bold; border-radius: 10px; background-color: transparent; border-color: white; color: white; transition: none;">Login</a>
+                        <a href="{{ route('register') }}" class="btn btn-light text-black"
+                            style="font-weight: bold; border-radius: 10px; margin-left: 10px; background-color: white; color: black; border-color: white; transition: none;">Register</a>
+                    </div>
+                </div>
+            </div>
+        @endguest
     </section>
 @endsection
