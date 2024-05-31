@@ -82,54 +82,45 @@
         <div class="recommendations" style="margin-top: 1rem; position: absolute; top: 20vh; right: 5vw; width: 250px;">
             <h6>Siapa yang harus diikuti</h6>
             <small class="text-muted">Orang yang mungkin anda kenal</small>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/default_profile.png') }}" class="rounded-circle mr-3"
-                                style="width: 30px; height: 30px; margin-right: 10px;">
-                            <div>
-                                <h6 class="mb-0">sucinrptmh_</h6>
-                                <p class="mb-0" style="font-size: 10px;">Suci Nurpatimah</p>
+
+            @php
+                $recommendations = [
+                    [
+                        'username' => 'sucinurrr',
+                        'name' => 'Suci Nurpatimah',
+                        'profile_img' => 'assets/default_profile.png',
+                    ],
+                    [
+                        'username' => 'faqys',
+                        'name' => 'Faqih Yuliaji Setiawan',
+                        'profile_img' => 'assets/default_profile.png',
+                    ],
+                    ['username' => 'trians', 'name' => 'Tri Annisa', 'profile_img' => 'assets/default_profile.png'],
+                ];
+                $loggedInUsername = Auth::user()->username;
+            @endphp
+
+            @foreach ($recommendations as $user)
+                @if ($user['username'] !== $loggedInUsername)
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset($user['profile_img']) }}" class="rounded-circle mr-3"
+                                        style="width: 30px; height: 30px; margin-right: 10px;">
+                                    <div>
+                                        <h6 class="mb-0">{{ $user['username'] }}</h6>
+                                        <p class="mb-0" style="font-size: 10px;">{{ $user['name'] }}</p>
+                                    </div>
+                                </div>
+                                <a href="{{ route('login') }}" class="btn btn-dark"
+                                    style="background-color: transparent; color: #17a2b8; border: none;">Follow</a>
                             </div>
-                        </div>
-                        <a href="{{ route('login') }}" class="btn btn-dark"
-                            style="background-color: transparent; color: #17a2b8; border: none;">Follow</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/default_profile.png') }}" class="rounded-circle mr-3"
-                                style="width: 30px; height: 30px; margin-right: 10px;">
-                            <div>
-                                <h6 class="mb-0">faqys</h6>
-                                <p class="mb-0" style="font-size: 10px;">Faqih Yuliaji Setiawan</p>
-                            </div>
-                        </div>
-                        <a href="{{ route('login') }}" class="btn btn-dark"
-                            style="background-color: transparent; color: #17a2b8; border: none;">Follow</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('assets/default_profile.png') }}" class="rounded-circle mr-3"
-                                style="width: 30px; height: 30px; margin-right: 10px;">
-                            <div>
-                                <h6 class="mb-0">trians</h6>
-                                <p class="mb-0" style="font-size: 10px;">Tri Annisa</p>
-                            </div>
-                        </div>
-                        <a href="{{ route('login') }}" class="btn btn-dark"
-                            style="background-color: transparent; color: #17a2b8; border: none;">Follow</a>
-                    </div>
-                </li>
-            </ul>
+                        </li>
+                    </ul>
+                @endif
+            @endforeach
+
             <hr>
         </div>
     </section>

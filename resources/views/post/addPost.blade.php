@@ -65,8 +65,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- Akhir konten tambahan -->
     </section>
 @endsection
