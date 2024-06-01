@@ -49,7 +49,7 @@
                                             <input type="text"
                                                 class="form-control @error('nama') is-invalid @enderror" id="nama"
                                                 name="nama" required style="background-color: #fff; color: #000;"
-                                                placeholder="Masukan Nama">
+                                                placeholder="Masukan nama lengkap">
                                             @error('nama')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -57,10 +57,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">E-mail</label>
+                                    <label for="email" class="form-label fw-bold">E - Mail</label>
                                     <input type="email" class="form-control @error('email') is-invalid @enderror"
                                         id="email" name="email" required
-                                        style="background-color: #fff; color: #000;" placeholder="Masukan E-mail">
+                                        style="background-color: #fff; color: #000;" placeholder="Masukan akun email">
                                     @error('email')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -81,14 +81,14 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="password_confirmation" class="form-label fw-bold">Password Confirmation
+                                    <label for="password_confirmation" class="form-label fw-bold">Konfirmasi Password
                                         <i class="bi bi-eye" id="togglePasswordConfirmation"
                                             style="color: #fff; margin-left: 10px; cursor: pointer;"></i></label>
                                     <input type="password"
                                         class="form-control @error('password_confirmation') is-invalid @enderror"
                                         id="password_confirmation" name="password_confirmation" required
                                         style="background-color: #fff; color: #000;"
-                                        placeholder="Masukan ulang password">
+                                        placeholder="Masukan confirm password">
                                     @error('password_confirmation')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
