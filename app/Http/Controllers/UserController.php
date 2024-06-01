@@ -52,4 +52,9 @@ class UserController extends Controller
     {
         return view('user.notifikasi');
     }
+
+    public function bookmark()
+    {
+        return view('user.bookmark');
+    }
 }

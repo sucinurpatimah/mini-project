@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#"
+                    <a class="nav-link text-light" href="{{ route('user.bookmark') }}"
                         style="display: flex; align-items: center; margin-bottom: 5px;">
                         <i class="bi bi-bookmarks-fill" style="margin-right: 30px; color: #17a2b8;"></i>
                         Bookmarks

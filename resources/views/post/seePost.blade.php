@@ -6,7 +6,7 @@
             <img src="{{ asset('assets/logo-medsos.png') }}" alt="Logo" width="50" height="50"
                 style="margin-top: 10px;">
         </div>
-        <div class="w-100 d-flex justify-content-start" style="margin-left: 300px;">
+        <div class="d-flex justify-content-start" style="margin-left: 300px;">
             <a href="{{ auth()->check() ? route('user.index') : route('index') }}"
                 style="color: white; text-decoration: none;">
                 <i class="bi bi-chevron-left" style="font-size: 15px; font-weight: bold; margin-right: 5px;"></i>
