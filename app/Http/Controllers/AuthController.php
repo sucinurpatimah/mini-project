@@ -62,10 +62,19 @@ class AuthController extends Controller
         ]);
     }
 
-
     public function logout()
     {
         Auth::logout();
         return redirect()->route('index');
+    }
+
+    public function verifyPassword(Request $request)
+    {
+        $user = auth()->user();
+        if (Hash::check($request->password, $user->password)) {
+            return response()->json(['success' => true, 'redirect' => route('edit.profile')]);
+        } else {
+            return response()->json(['success' => false]);
+        }
     }
 }

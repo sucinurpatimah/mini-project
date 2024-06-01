@@ -30,6 +30,7 @@ Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')
 Route::get('/posting', [PostController::class, 'addPost'])->name('post.addPost');
 Route::post('/store', [PostController::class, 'storePost'])->name('post.store');
 Route::get('/seePost/{id}', [PostController::class, 'seePost'])->name('post.seePost');
+Route::post('/verify-password', 'AuthController@verifyPassword');
 
 
 // Auth

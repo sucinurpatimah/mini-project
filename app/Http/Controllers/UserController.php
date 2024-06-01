@@ -44,6 +44,7 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('user.profile');
+        $jumlahPost = Post::where('user_id', Auth::user()->id)->count();
+        return view('user.profile', compact('jumlahPost'));
     }
 }
