@@ -55,6 +55,7 @@ class UserController extends Controller
 
     public function bookmark()
     {
-        return view('user.bookmark');
+        $posts = Post::with('user')->get();
+        return view('user.bookmark', ['posts' => $posts]);
     }
 }
