@@ -47,4 +47,9 @@ class UserController extends Controller
         $jumlahPost = Post::where('user_id', Auth::user()->id)->count();
         return view('user.profile', compact('jumlahPost'));
     }
+
+    public function notifikasi()
+    {
+        return view('user.notifikasi');
+    }
 }

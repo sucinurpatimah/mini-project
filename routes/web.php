@@ -24,6 +24,7 @@ Route::get('/index', [UserController::class, 'index'])->name('user.index');
 Route::get('/explore', [UserController::class, 'explore'])->name('user.explore');
 Route::post('/search', [UserController::class, 'search'])->name('user.search');
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+Route::get('/notifikasi', [UserController::class, 'notifikasi'])->name('user.notifikasi');
 
 
 // Post
